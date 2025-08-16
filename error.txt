@@ -1,0 +1,68 @@
+INFO:     127.0.0.1:62212 - "POST /run_dfmea HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\middleware\errors.py", line 187, in __call__
+    raise exc
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\routing.py", line 734, in app  
+    await route.handle(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\routing.py", line 76, in app   
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\routing.py", line 73, in app   
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\fastapi\routing.py", line 301, in app    
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\fastapi\routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\starlette\concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\dfmea_env\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\server\main.py", line 115, in run_dfmea
+    download(req.kb_url, kb_path)
+  File "C:\Users\AS9969\Desktop\Ashish Work Folder\DFMEA\dfmea\server\main.py", line 113, in download
+    shutil.copy(url, path)
+  File "C:\Program Files\Python312\Lib\shutil.py", line 435, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Program Files\Python312\Lib\shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: '"C:/Users/AS9969/Desktop/Ashish Work Folder/DFMEA/dfmea/server/sample_files/dfmea_knowledge_bank_3.csv"'
