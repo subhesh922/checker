@@ -1,0 +1,433 @@
+[End-to-End] Starting full DFMEA pipeline...
+[VectorPipeline] Starting vector ingestion pipeline...
+[ExtractionAgent] Loading DFMEA Knowledge Bank: server\sample_files\kb_input.csv
+[ExtractionAgent] Loading Field Reported Issues: server\sample_files\fi_input.xlsx
+[ChunkingAgent] Chunking knowledge bank...
+[ChunkingAgent] Chunking field-reported issues...
+[ChunkingAgent] Merged into 3016 smart chunks before token slicing.
+[ChunkingAgent] Token slicing: 100%|████████████████████████████████████████████████████████| 3016/3016 [00:00<00:00, 75041.35it/s] 
+[ChunkingAgent] Tokens sliced into 3016 total chunks.
+[ChunkingAgent] Total tokens across all chunks: 89652
+[EmbeddingAgent] 🚀 Embedding 3016 chunks with sync batching...
+[EmbeddingAgent] Embedding: 100%|██████████████████████████████████████████████████████████████████| 61/61 [04:38<00:00,  4.57s/it]
+
+🔍 [EmbeddingAgent] Token Usage Summary:
+  • Total Chunks Embedded: 3016
+  • Total Tokens Used: 89,652
+  • Knowledge Bank → 3,619 tokens
+  • Field Issues   → 86,033 tokens
+[VectorStoreAgent] Creating collection 'dfmea_collection_533b5baf'...
+[VectorStoreAgent] Created session collection: dfmea_collection_533b5baf
+[VectorStoreAgent] Uploading 3016 vectors in batches...
+[VectorStoreAgent] Upload complete.
+[DFMEAPipeline] Starting DFMEA generation pipeline...
+[ContextAgent] Searching Qdrant for: Generate DFMEA entries for recent field failures
+[VectorStoreAgent] Searching for: 'Generate DFMEA entries for recent field failures' in 'dfmea_collection_533b5baf'
+[VectorStoreAgent] Found 100 matches.
+[ContextAgent] Retrieved 100 chunks from Qdrant.
+
+[ContextAgent] Processing batch 1...
+[ContextAgent] Processing batch 2...
+[ContextAgent] Processing batch 3...
+[ContextAgent] Processing batch 4...
+[ContextAgent] Processing batch 5...
+[ContextAgent] Processing batch 6...
+[ContextAgent] Processing batch 7...
+[ContextAgent] Processing batch 8...
+[ContextAgent] Processing batch 9...
+[ContextAgent] Processing batch 10...
+[ContextAgent] Processing batch 11...
+[ContextAgent] Processing batch 12...
+[ContextAgent] Processing batch 13...
+[ContextAgent] Processing batch 14...
+[ContextAgent] Processing batch 15...
+[ContextAgent] Processing batch 16...
+[ContextAgent] Processing batch 17...
+[ContextAgent] Processing batch 18...
+[ContextAgent] Processing batch 19...
+[ContextAgent] Processing batch 20...
+[ContextAgent] Raw LLM Response (batch 11, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Facilitates user interaction by detecting touch input.",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 9, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC52/57 Lightning",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Detects and processes touch input for user interaction",
+            "FailureModes":
+
+[ContextAgent] Raw LLM Response (batch 13, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "ET40/45",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Enables user interaction through touch input",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 6, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC53",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 15, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user input interface through touch interaction",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 16, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Facilitates user interaction by detecting touch inputs",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 5, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC53",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Detects touch input and transmits signals to the processor",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 10, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Facilitates user interaction through touch input",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 17, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input and display output",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 20, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input and display output",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 12, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Detects and processes user touch inputs",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 18, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user input interface via touch functionality",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 19, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Facilitates user interaction through touch input and displays visual output.",
+            "Failu
+
+[ContextAgent] Raw LLM Response (batch 4, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "MC93",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Display",
+            "Function": "Provides visual output for the device",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 14, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC53",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Detects and processes user touch inputs",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 2, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Backlight Diffuser Film",
+            "Function": "Provides uniform light distribution across the display",
+            "FailureModes":
+
+[ContextAgent] Raw LLM Response (batch 7, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC58",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input and display output",
+            "FailureModes": [
+
+
+[ContextAgent] Raw LLM Response (batch 8, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "ET40/45",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input",
+            "FailureModes": [
+              {
+
+
+[ContextAgent] Raw LLM Response (batch 1, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user input interface",
+            "FailureModes": [
+              {
+                "Fa
+
+[ContextAgent] Raw LLM Response (batch 3, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+            "Function": "Provides user input interface",
+            "FailureModes": [
+              {
+                "Fa
+
+[ContextAgent] Raw LLM Response (batch 3, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+            "FailureModes": [
+              {
+                "Fa
+
+[ContextAgent] Raw LLM Response (batch 3, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+              {
+                "Fa
+
+[ContextAgent] Raw LLM Response (batch 3, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+[ContextAgent] Raw LLM Response (batch 3, attempt 1):
+[
+  {
+    "ID": 1,
+    "Product": "TC57",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+    "Subsystems": [
+      {
+        "Subsystem": "Display",
+        "Components": [
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+          {
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+            "Component": "Touch Panel",
+            "Function": "Provides user interface for touch input.",
+            "Function": "Provides user interface for touch input.",
+            "FailureModes": [
+              {
+
+
+
+[ContextAgent] Parsed 36 DFMEA entries.
+
+[WriterAgent] Writing DFMEA output to: output/dfmea_output.xlsx
+[WriterAgent] Raw DFMEA JSON dumped to: output/raw_dfmea_output.json
+[WriterAgent] Excel file saved with 72 rows.
